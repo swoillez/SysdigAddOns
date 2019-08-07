@@ -1,0 +1,61 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: labelapp-deployment
+  labels:
+    name: labelapp
+    app: labelapp
+    release: "stable"
+    version: "1.1"
+    team: "labelapp-team"
+    department: "labelapp-department"
+    businessunit: "labelapp-bu"
+    costcenter: "32693"
+  namespace: custom-labels
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+     name: labelapp
+     role: labelapp
+     app: labelapp
+  template:
+    spec:
+      containers:
+        - name: nginx
+          image: registry.hub.docker.com/library/nginx:1.15
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 0.1
+              memory: 128Mi
+            requests:
+              memory: 64Mi
+              cpu: 0.05
+    metadata:
+      labels:
+        name: labelapp
+        role: labelapp
+        app: labelapp
+        team: "labelapp-team"
+        department: "labelapp-department"
+        businessunit: "labelapp-bu"
+        costcenter: "32693"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: labelapp-service
+  labels:
+    team: "labelapp-team"
+    department: "labelapp-department"
+    businessunit: "labelapp-bu"
+    costcenter: "32693"
+  namespace: custom-labels  
+spec:
+  selector:
+    app: labelapp
+  ports:
+    - port: 80
