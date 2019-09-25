@@ -67,7 +67,7 @@ Labels are recorded by the Sysdig agents while monitoring for events. Thus they 
 
 Sysdig Secure has an image scanning policy function, allowing us the creation of custom policies to validate not only security-related configurations but also corporate rules. It is then a good practice to create a specific policy to test Docker images for the existence of required labels, and maybe block the use of images that do not have these labels. The following screenshot is an example of such a validation policy:
 
-![Policy](https://github.com/swoillez/SysdigAddOns/tree/master/Chargeback/images/Policy-Labeling.png)
+![Policy](images/Policy-Labeling.png)
 
 ## Real-time Consumption Dashboards
 
@@ -101,7 +101,7 @@ Dashboards show data in a single panel allowing the understanding of costs, if s
 
 There are many ways to present data, and one wants to see what matters for his/her personal role. The following dashboard has been created as an example, to show what can be assembled for consumption.
 
-![Dashboard](https://github.com/swoillez/SysdigAddOns/tree/master/Chargeback/images/Consumption-Dashboard.png)
+![Dashboard](images/Consumption-Dashboard.png)
 
 ## API Integration with a Sysdig billing backend
 
@@ -111,7 +111,7 @@ Using the Python access, it is very easy to build a Sysdig query, and retrieve t
 
 The Python script example provided with this article demonstrates this querying ability and displays the result on the screen. It can be easily modified to process the resulting data in a different way. The following screenshot shows the different options available to call the script, as well as an example of data query:
 
-![API](https://github.com/swoillez/SysdigAddOns/tree/master/Chargeback/images/Consumption-API-Access.png)
+![API](images/Consumption-API-Access.png)
 
 
 In order for this to work, you need to configure the Sysdig backend Python environment on your machine. The installation steps are provided with the Sysdig platform developer documentation that can be found at the following location:
