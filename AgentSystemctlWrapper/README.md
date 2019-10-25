@@ -21,9 +21,9 @@ Systemctl also detect the loss of the Sysdig Agent container, and restarts it au
 
 1) **Create the service description**
 
-- On Ubuntu : copy this content to ```/lib/systemd/system/sysdigagent.service```
+- On Ubuntu : copy the sysdigagent.service file to ```/lib/systemd/system/sysdigagent.service```
 
-- On other Linuxes: copy this content to ```/var/systemd/system/sysdigagent.service```
+- On other Linuxes: copy the sysdigagent.service file to ```/var/systemd/system/sysdigagent.service```
 
 2) **Modify the parameters in the sysdigagent.service file**
 
