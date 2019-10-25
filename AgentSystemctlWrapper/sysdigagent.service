@@ -1,0 +1,27 @@
+[Unit]
+Description=Sysdig Agent Systemctl service
+Documentation=https://sysdigdocs.atlassian.net/wiki/spaces/Platform/pages/192151563/Agent+Install+Non-Orchestrated+Docker+Agent+Service+Agent
+After=network.target docker.socket
+Requires=docker.socket
+
+[Service]
+RestartSec=10
+Restart=always
+TimeoutStartSec=90
+
+# Parameters 
+
+Environment="ACCESS_KEY=<Your Sysdig Token>"
+Environment="TAGS=example_tag:example_value"
+Environment="SECURE=true"
+Environment="CHECK_CERTIFICATE=true"
+
+# Commands
+
+ExecStartPre=-/usr/bin/docker rm -f sysdig-agent
+ExecStartPre=-/usr/bin/docker pull sysdig/agent
+ExecStart=/usr/bin/docker run --rm --name sysdig-agent --privileged --net host --pid host -e ACCESS_KEY=${ACCESS_KEY} -e SECURE=${SECURE} -e CHECK_CERTIFICATE=${CHECK_CERTIFICATE} -e TAGS=${TAGS} -v /var/run/docker.sock:/host/var/run/docker.sock -v /dev:/host/dev -v /proc:/host/proc:ro -v /boot:/host/boot:ro -v /lib/modules:/host/lib/modules:ro -v /usr:/host/usr:ro --shm-size=512m sysdig/agent
+ExecStop=/usr/bin/docker stop sysdig-agent
+
+[Install]
+WantedBy=multi-user.target
