@@ -9,7 +9,7 @@
 
 There is no notion of daemonset on non clustered Docker servers. You have to deploy the agent with a ```docker run``` command.
 
-On Docker Swarm, even though there is a notion of daemonset called service with global mode, Swarm does not allow privilegied containers, and the Sysdig Agent is a privilegied container. In that case, again, you have to deploy the agent with a ```docker run``` command.
+On Docker Swarm, even though there is a notion of daemonset called service with global mode, Swarm does not allow privileged containers, and the Sysdig Agent is a privileged container. In that case, again, you have to deploy the agent with a ```docker run``` command.
 
 ## What is the systemctl wrapper for the Sysdig agent ?
 
