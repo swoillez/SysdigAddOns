@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockerpsprobe-deployment
+  labels:
+    app: dockerpsprobe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dockerpsprobe
+  template:
+    metadata:
+      labels:
+        app: dockerpsprobe
+    spec:
+      containers:
+      - name: myclusterdockerps
+        image: stephw/dockerps-response-time
+        env:
+            - name: CLUSTER_NAME
+              value: "mycluster"
+            - name: DOCKER_HOST
+              value: "tcp://<IP of my cluster>:2376"
+            - name: CHECK_INTERVAL
+              value: "10"
+            - name: MILLISECONDS
+              value: "true"

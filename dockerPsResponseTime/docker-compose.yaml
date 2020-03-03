@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  dockerpstest:
+    image: stephw/dockerps-response-time
+    build: .
+    environment:
+        - CLUSTER_NAME="<my cluster name>" 
+        - CHECK_INTERVAL=10 
+        - MILLISECONDS="true"
+        - DOCKER_HOST="tcp://<IP of my cluster>:2376"

@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: website-resp-time
+spec:
+  containers:
+  - name: msft-resp-time
+    image: stephw/http-response-time
+    env:
+    - name: WEBSITE_URL
+      value: "http://www.microsoft.com"
+    - name: METRIC_NAME
+      value: "websiteResponseTime"
+    - name: CHECK_INTERVAL
+      value: "8"
+  - name: google-resp-time
+    image: stephw/http-response-time
+    env:
+    - name: WEBSITE_URL
+      value: "http://www.google.com"
+    - name: METRIC_NAME
+      value: "websiteResponseTime"
+    - name: CHECK_INTERVAL
+      value: "8"
+  - name: facebook-resp-time
+    image: stephw/http-response-time
+    env:
+    - name: WEBSITE_URL
+      value: "http://www.facebook.com"
+    - name: METRIC_NAME
+      value: "websiteResponseTime"
+    - name: CHECK_INTERVAL
+      value: "8"
+  - name: ibm-resp-time
+    image: stephw/http-response-time
+    env:
+    - name: WEBSITE_URL
+      value: "http://www.ibm.com"
+    - name: METRIC_NAME
+      value: "websiteResponseTime"
+    - name: CHECK_INTERVAL
+      value: "8"

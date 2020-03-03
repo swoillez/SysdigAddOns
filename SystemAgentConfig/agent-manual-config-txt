@@ -1,0 +1,8 @@
+docker run -it --rm docker/dtr:2.7.3 install --dtr-external-url dtr.stephw.sysdiglabs.com --ucp-node ip-192-168-100-8 --ucp-username admin --ucp-url 192.168.100.31 --ucp-insecure-tls
+
+
+b7b5cf22-24c7-4da3-a054-f0e86bcb4794
+
+echo customerid: b7b5cf22-24c7-4da3-a054-f0e86bcb4794 >> /opt/draios/etc/dragent.default.yaml
+
+kubectl get secret `kubectl get sa/sysdig-agent -n sysdig-agent -o yaml | grep token | awk '{print $3}'` -o yaml -n sysdig-agent | grep token: | awk '{print $2}' | base64 -d > /opt/draios/etc/sysdig-agent-bearer-token
