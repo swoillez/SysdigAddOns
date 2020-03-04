@@ -1,0 +1,12 @@
+FROM centos:centos7
+
+RUN yum -y update; yum clean all
+RUN yum -y install epel-release 
+RUN yum -y install jq
+RUN yum -y install bc
+
+COPY ./scripts /scripts
+RUN /scripts/downloadDocker.sh
+
+ENTRYPOINT ["/bin/bash"]
+CMD ["/scripts/dockerPsResponseTime.sh"]

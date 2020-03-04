@@ -6,7 +6,7 @@ This is simple shell script that calls "docker ps", measures its response time, 
 
 The script works for both OpenSource docker engines / swarm clusters, and with Docker Enteprise that needs authentication.
 
-The following screenshot shows how the metric appear in the Sysdig console:
+The following screenshot shows how the metric appears in the Sysdig console:
 
 ![Metric](images/dockerPSmetric.png)
 
@@ -55,7 +55,7 @@ export DOCKER_HOST=tcp://<Server address>:2376
 docker ps
 ```
 
-## How to use the probe
+## How to use the DockerPS Response Time BLaprobe
 
 ### As a shell script
 
