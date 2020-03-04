@@ -2,7 +2,7 @@
 
 echo "-- Build the container image"
 
-docker build . -t stephw/dockerps-response-time
+docker build -f Dockerfile-Alpine -t stephw/dockerps-response-time:alpine .
 
 echo "-- Create the necessary environment ariables"
 
@@ -39,4 +39,4 @@ docker run -d --name $CONTAINER_NAME \
 -e DOCKER_HOST=${DOCKER_HOST} -e CLUSTER_NAME=${CLUSTER_NAME} \
 -e CHECK_INTERVAL=${CHECK_INTERVAL} -e METRIC_LABELS=${METRIC_LABELS} \
 -e MILLISECONDS=${MILLISECONDS} \
-stephw/dockerps-response-time
+stephw/dockerps-response-time:alpine

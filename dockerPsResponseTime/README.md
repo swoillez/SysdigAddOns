@@ -55,7 +55,7 @@ export DOCKER_HOST=tcp://<Server address>:2376
 docker ps
 ```
 
-## How to use the DockerPS Response Time BLaprobe
+## How to use the DockerPS Response Time Probe
 
 ### As a shell script
 
