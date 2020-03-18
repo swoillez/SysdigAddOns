@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  dockerpstest:
+    image: stephw/dockerps-response-time
+    build: .
+    environment:
+        - CLUSTER_NAME="<my cluster name>" 
+        - CHECK_INTERVAL=300 
+        - UCP_PUBLIC_FQDN="<IP or dns Name of my cluster>"
+        - UCP_ADMIN_USERID="<UCP User Name>"
+        - UCP_ADMIN_PASSWORD="<UCP User Password>"
