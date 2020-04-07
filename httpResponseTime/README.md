@@ -10,36 +10,47 @@ The Sysdig agent collects automatically this StatD metric, allowing the creation
 
 ## How it is built ?
 
-The probe is a simple piece of Python code, that tests the URL, and pushes the result on the 8125 localhost UDP port. There is no need to care about sending the data to the Sysdig agent (because of the StatD teleport function of the Sysdig agent)
+This is a very simple loop that does an HTTP GET against the given URL, measures the time it takes to do it, pushes the result on the 8125 localhost UDP port, then goes to sleep until the next test.
 
-## What is the systemctl wrapper for the Sysdig agent ?
+There is no need to care about sending the data to the Sysdig agent (because of the StatD teleport function of the Sysdig agent)
 
-The systemctl wrapper for the Sysdig agent is a way to automate the start and restart of the sysdig agent, using the ```docker run``` command and systemctl to execute it.
+The script is delivered in different forms:
 
-Systemctl also detect the loss of the Sysdig Agent container, and restarts it automatically.
+- The simple python script that you can use as-is
+- A container that you have to build or get from the Docker Hub. The provided startProbe.sh file shows how to build and start the container.
+- A Kubernetes Deployment that ensures resilience. Have a look at it. This deployment actually starts 4 containers configured to test different websites. This is how the screenshot of this page has been built.
 
-## How to use the Wrapper?
+## Parameters
 
-1) **Create the service description**
+Parameters are set using environment variables.
 
-- On Ubuntu : copy the sysdigagent.service file to ```/lib/systemd/system/sysdigagent.service```
+- **WEBSITE_URL**: The URL or IP of the Web Site to test. It must have the form "https://<name or IP address>"
+- **METRIC_NAME**: The name of the StatD metric
+- **CHECK_INTERVAL**: Time in seconds between two checks
+- **METRIC_LABELS**: (optional) Comma-separated additional parameters. ex: region=europe, team=marketing
 
-- On other Linuxes: copy the sysdigagent.service file to ```/var/systemd/system/sysdigagent.service```
+## How to use the HTTP Response Time Probe
 
-2) **Modify the parameters in the sysdigagent.service file**
+### As a Python script
 
-- **ACCESS_KEY**: Your Sysdig Access Key
-- **TAGS**: Additionnal tags you want to add to the Docker engine
-- **SECURE**: true if you enable secure on the agent
-- **CHECK_CERTIFICATE**: true if you want the agent to valide the sysdig backend certificate, false if you use self signed certificates
+Simply export the required variables then execute the python script:
 
-3) **Install and manage the service**
+```script
+export WEBSITE_URL="http://www.sysdig.com"
+export METRIC_NAME="websiteResponseTime"
+export CHECK_INTERVAL=10
+python httpResponseTime.py
+```
+### As a container
 
-- To enable the service: ```sudo systemctl enable --now sysdigagent.service```
-- To stop the service: ```sudo systemctl stop sysdigagent.service```
-- To start the service: ```sudo systemctl start sysdigagent.service```
-- To disable the service: ```sudo systemctl disable sysdigagent.service```
+1. You can use the already built image by doing: `docker pull stephw/http-response-time`
+2. You can build your own copy of the image: `docker build . -t http-response-time`
+3. Set the variables to be passed to the container as environment variables and launch `docker run` with your container.
 
-## Reference
+An example is provided in [startProbe.sh](./startProbe.sh)
 
-https://suda.pl/privileged-containers-in-swarm/
+### As a Kubernetes deployment
+
+Use the provided [k8s-deployment.yaml](./k8s-deployment.yaml) deployment file. You have to customise this file to update the parameters with the web sites you want to test. The example start 4 containers to simultaneously test 4 web sites.
+
+Just do : `kubectl apply -f k8s_deployment.yaml -n <your namespace>`

@@ -12,7 +12,7 @@ The following screenshot shows how the metric appears in the Sysdig console:
 
 ## How it is built ?
 
-This is a very simple loop that do "docker ps", pushes the result on the 8125 localhost UDP port, then goes to sleep until the next test.
+This is a very simple loop that does "docker ps", pushes the result on the 8125 localhost UDP port, then goes to sleep until the next test.
 
 There is no need to care about sending the data to the Sysdig agent (because of the StatD teleport function of the Sysdig agent)
 
