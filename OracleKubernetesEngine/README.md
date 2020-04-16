@@ -21,9 +21,9 @@ Kernel headers are not installed by default on OKE nodes, and they are required 
 
 ## Sysdig agents deployment
 
-- Follow the installation steps described here: https://docs.sysdig.com/en/steps-for-kubernetes--vanilla-.html **BUT:**
+- Follow the installation steps described here: https://docs.sysdig.com/en/steps-for-kubernetes--vanilla-.html, **BUT:**
 
-- Before executing step 7, modify the `sysdig-agent-daemonset-v2.yaml` to uncomment the follwing eBPF lines:
+- Before executing step 7, modify the `sysdig-agent-daemonset-v2.yaml` to uncomment the following eBPF lines:
 
 ```shell
         #env:

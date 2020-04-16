@@ -23,7 +23,7 @@ An example of custom probe creation using bash scripting, StatD, and various way
 An example of custom probe creation using Python, StatD, and various ways to launch the probe
 
 
-## [Deploy agents on Oracle Kubernetes Engine](https://github.com/swoillez/SysdigAddOns/tree/master/OracleKubernetesEngine)
+## [Deploy Sysdig agents on Oracle Kubernetes Engine](https://github.com/swoillez/SysdigAddOns/tree/master/OracleKubernetesEngine)
 
 How to deploy the Sysdig agents on Oracle Kubernetes Engine
 
