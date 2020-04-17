@@ -23,6 +23,11 @@ An example of custom probe creation using bash scripting, StatD, and various way
 An example of custom probe creation using Python, StatD, and various ways to launch the probe
 
 
+## [Use the EU endpoint of OpsGenie in Sysdig](https://github.com/swoillez/SysdigAddOns/tree/master/OpsGenieEUEndpoint)
+
+Learn how to trick Sysdig to use the EU instance of OpsGenie in Sysdig Notifications Channels
+
+
 ## [Deploy Sysdig agents on Oracle Kubernetes Engine](https://github.com/swoillez/SysdigAddOns/tree/master/OracleKubernetesEngine)
 
 How to deploy the Sysdig agents on Oracle Kubernetes Engine
