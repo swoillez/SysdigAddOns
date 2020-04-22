@@ -1,0 +1,30 @@
+#
+# Triggers a warning if a non application binary writes in an application directory
+#
+
+- macro: open_write
+  condition: >
+    (evt.type=open or evt.type=openat) and
+    fd.typechar='f' and
+    (evt.arg.flags contains O_WRONLY or
+    evt.arg.flags contains O_RDWR or
+    evt.arg.flags contains O_CREAT or
+    evt.arg.flags contains O_TRUNC)
+
+# application_binaries: names of the application binaries that are allowed to write in the app directories
+
+- macro: application_binaries
+  condition: proc.name in (application)
+
+# application_directories: Application directories you want to monitor
+
+- macro: application_directories
+  condition: fd.directory in (/sysdig)
+
+# The Falco rule
+
+- rule: Write in an Application Directory
+  desc: an attempt to write a file in one of the monitored application directories
+  condition: evt.dir = < and open_write and not application_binaries and application_directories
+  output: "Write In Application Directory: The %fd.name file has been written in %fd.directory (user=%user.name command='%proc.cmdline' parent=%proc.pname container_id=%container.id)"
+  priority: WARNING
