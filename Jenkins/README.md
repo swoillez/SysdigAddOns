@@ -32,9 +32,9 @@ In order to do these configuration change, you need to download the jenkins `val
 
 ## Modifications
 
-### 1) Search for `numExecutors` and modify that parameter to 1
+**1) Search for `numExecutors` and modify that parameter to 1**
 
-### 2) Search for `installPlugins`and add the following line to the list: `- prometheus:2.0.6`
+**2) Search for `installPlugins`and add the following line to the list: `- prometheus:2.0.6`**
 
 Note that version 2.0.6 may not be the latest version of the Prometheus plugin today, so check the latest version number here: https://plugins.jenkins.io/prometheus/
 
