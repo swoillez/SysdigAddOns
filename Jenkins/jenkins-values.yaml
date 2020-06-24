@@ -219,6 +219,7 @@ master:
     - git:4.2.2
     - configuration-as-code:1.39
     - prometheus:2.0.6
+    - sysdig-secure:1.0.19.3
 
   # Enable to always override the installed plugins with the values of 'master.installPlugins' on upgrade or redeployment.
   # overwritePlugins: true

@@ -130,8 +130,13 @@ Search for `accessKey` and paste your Sysdig access Key
 
 
 
+Jenkins Shedule: H/5 * * * *
 
 
+
+
+helm install sysdig-agent -f sysdig-values.yaml stable/sysdig -n sysdig-agent
+promraw.default_jenkins
 
 
 kubectl edit configmap sysdig-agent -n sysdig-agent
@@ -157,3 +162,78 @@ https://plugins.jenkins.io/prometheus/
 
 https://sysdig.atlassian.net/wiki/spaces/~877077671/pages/865731144/Monitor+Jenkins+with+Prometheus
 
+
+
+Metrics
+
+### Jenkins Infrastructure
+
+default_jenkins_up (Not Available)
+promraw.default_jenkins_uptime (Not Available)
+jenkins_plugins_failed
+jenkins_plugins_withUpdate
+jenkins_plugins_active
+
+jenkins_health_check_score
+promraw.jenkins_health_check_count
+
+jenkins_executor_in_use_value
+jenkins_executor_in_use_history
+jenkins_executor_count_value
+jenkins_executor_count_history
+jenkins_executor_free_value
+
+jenkins_node_offline_history
+jenkins_node_online_history
+jenkins_node_offline
+jenkins_node_count_value
+jenkins_node_count_history
+
+jenkins_runs_total_total
+jenkins_runs_success
+
+### Jenkins ???
+
+jenkins_job_count_value
+jenkins_job_waiting_duration
+jenkins_job_total_duration
+jenkins_job_building_duration
+jenkins_job_blocked_duration
+jenkins_job_queuing_duration
+jenkins_job_averageDepth
+jenkins_job_scheduled_total
+jenkins_job_execution_time
+
+
+jenkins_queue_blocked_value
+jenkins_queue_size_history
+jenkins_queue_pending_history
+jenkins_queue_stuck_history
+jenkins_queue_size_value
+
+jenkins_task_scheduled
+jenkins_task_waiting_duration
+jenkins_task_blocked_duration
+
+
+## Jenkins Build Service
+
+jenkins_project_count_value
+jenkins_project_count_history
+jenkins_project_enabled_count
+jenkins_project_disabled_coun
+
+
+default_jenkins_builds_duration_milliseconds_summary_count{jenkins_job="FailingPipeline",repo="NA",} 3975.0
+default_jenkins_builds_success_build_count
+default_jenkins_builds_failed_build_count
+default_jenkins_builds_last_build_result
+default_jenkins_builds_last_build_duration_milliseconds
+
+Jauges
+
+default_jenkins_builds_last_build_result
+default_jenkins_builds_last_build_duration_milliseconds
+jenkins_job_count_value
+jenkins_plugins_failed
+jenkins_queue_blocked_value
