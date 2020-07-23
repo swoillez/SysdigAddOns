@@ -1,10 +1,12 @@
 # SysdigAddOns / Jenkins Monitoring with Sysdig using Prometheus
 
-## What this is about
+## Overview
 
-This article explores the Jenkins Prometheus metrics, and shows how to collect them with Sysdig Monitor, and create awesome Jenkins dashboards written in PromQL
+This article explores the Jenkins Prometheus metrics, and shows how to collect them with Sysdig Monitor, and create awesome Jenkins dashboards written in PromQL.
 
-If you need to create a demo or test environment, the article starts with a step by step guide to create a demo environment, by installing and configuring Jenkins and the Sysdig agents on an existing Kubernetes cluster.
+If you need to create a demo or test environment, the article starts with a step-by-step guide to create a demo environment, by installing and configuring Jenkins and the Sysdig agents on an existing Kubernetes cluster.
+
+If you don't have Sysdig Monitor yet, you can start a 14 days free trial by registering here: https://sysdig.com/company/free-trial/
 
 <br>
 
