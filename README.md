@@ -34,6 +34,12 @@ An example of custom probe creation using Python, StatD, and various ways to lau
 
 ---
 
+## [Jenkins Internals Monitoring using the Prometheus exporter](https://github.com/swoillez/SysdigAddOns/tree/master/Jenkins)
+
+How to deploy and use the Prometheus exporter for Jenkins in order to build awesome dashboards for the infrastructure and development teams
+
+---
+
 ## [Use the EU endpoint of OpsGenie in Sysdig](https://github.com/swoillez/SysdigAddOns/tree/master/OpsGenieEUEndpoint)
 
 Learn how to trick Sysdig to use the EU instance of OpsGenie in Sysdig Notifications Channels

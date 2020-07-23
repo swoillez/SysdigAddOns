@@ -1,0 +1,1042 @@
+{
+    "name": "Jenkins Jobs",
+    "panels": [
+        {
+            "id": 1,
+            "type": "basicNumber",
+            "name": "# of Projects",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "jenkins_project_count_history",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "jenkins_project_count_history",
+                                "id": "jenkins_project_count_history",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "jenkins_project_count_history",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1595349098571,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 2,
+            "type": "basicNumber",
+            "name": "Disabled Projects",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "jenkins_project_disabled_count_value",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "jenkins_project_disabled_count_value",
+                                "id": "jenkins_project_disabled_count_value",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "jenkins_project_disabled_count_value",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1595349098571,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 3,
+            "type": "basicNumber",
+            "name": "Running Projects",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "jenkins_project_enabled_count_value",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "jenkins_project_enabled_count_value",
+                                "id": "jenkins_project_enabled_count_value",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "jenkins_project_enabled_count_value",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1595349098571,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 4,
+            "type": "basicTimechart",
+            "name": "Job Execution Time",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "Jenkins Job",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "relativeTime",
+                        "inputFormat": "ms",
+                        "displayFormat": "ms",
+                        "decimals": 0,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "default_jenkins_builds_last_build_duration_milliseconds",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "default_jenkins_builds_last_build_duration_milliseconds",
+                                "id": "default_jenkins_builds_last_build_duration_milliseconds",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "default_jenkins_builds_last_build_duration_milliseconds",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1595349098571,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ],
+                    "segmentation": {
+                        "labels": [
+                            {
+                                "id": "jenkins_job",
+                                "descriptor": null,
+                                "displayName": null,
+                                "sorting": null
+                            }
+                        ],
+                        "limit": 10,
+                        "direction": "desc"
+                    }
+                }
+            ],
+            "applyScopeToAll": false,
+            "applySegmentationToAll": false,
+            "legendConfiguration": {
+                "enabled": true,
+                "position": "right",
+                "layout": "table",
+                "showCurrent": true
+            },
+            "axesConfiguration": {
+                "bottom": {
+                    "enabled": true
+                },
+                "left": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": null,
+                    "maxValue": null,
+                    "minInputFormat": "ns",
+                    "maxInputFormat": "ns",
+                    "scale": "linear"
+                },
+                "right": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": null,
+                    "maxValue": null,
+                    "minInputFormat": "1",
+                    "maxInputFormat": "1",
+                    "scale": "linear"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "name": "Projects Summary",
+            "description": "",
+            "markdownSource": "Projects Summary",
+            "transparentBackground": false,
+            "panelTitleVisible": false,
+            "textAutosized": true
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "name": "Jobs Execution Monitoring",
+            "description": "",
+            "markdownSource": "Jobs Execution Monitoring",
+            "transparentBackground": false,
+            "panelTitleVisible": false,
+            "textAutosized": true
+        },
+        {
+            "id": 7,
+            "type": "basicTable",
+            "name": "Max Execution time by Job",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "Max Execution Time over Time Period",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "relativeTime",
+                        "inputFormat": "ms",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "default_jenkins_builds_last_build_duration_milliseconds",
+                            "timeAggregation": "max",
+                            "groupAggregation": "max",
+                            "descriptor": {
+                                "documentId": "default_jenkins_builds_last_build_duration_milliseconds",
+                                "id": "default_jenkins_builds_last_build_duration_milliseconds",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "default_jenkins_builds_last_build_duration_milliseconds",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1595349098571,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ],
+                    "segmentation": {
+                        "labels": [
+                            {
+                                "id": "jenkins_job",
+                                "descriptor": null,
+                                "displayName": null,
+                                "sorting": null
+                            }
+                        ],
+                        "limit": 10,
+                        "direction": "desc"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "type": "advancedTimechart",
+            "name": "Build Result History",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "Jenkins Job",
+                        "timeSeriesDisplayNameTemplate": "{{jenkins_job}}",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "default_jenkins_builds_last_build_result"
+                }
+            ],
+            "legendConfiguration": {
+                "enabled": true,
+                "position": "right",
+                "layout": "table",
+                "showCurrent": true
+            },
+            "axesConfiguration": {
+                "bottom": {
+                    "enabled": true
+                },
+                "left": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": 0.0,
+                    "maxValue": null,
+                    "minInputFormat": "1",
+                    "maxInputFormat": "1",
+                    "scale": "linear"
+                },
+                "right": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": 0.0,
+                    "maxValue": null,
+                    "minInputFormat": "1",
+                    "maxInputFormat": "1",
+                    "scale": "linear"
+                }
+            }
+        },
+        {
+            "id": 9,
+            "type": "advancedNumber",
+            "name": "Last Hour Success Builds for NormalPipeline",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "ceil(increase(default_jenkins_builds_success_build_count{jenkins_job=\"NormalPipeline\"}[1h]))"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "ok",
+                        "value": 10.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    },
+                    {
+                        "severity": "medium",
+                        "value": 5.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "high",
+                    "displayText": ""
+                }
+            }
+        },
+        {
+            "id": 11,
+            "type": "advancedNumber",
+            "name": "Last Build for NormalPipeline ",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "Jenkins Job",
+                        "timeSeriesDisplayNameTemplate": "{{jenkins_job}}",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "default_jenkins_builds_last_build_result{jenkins_job=\"NormalPipeline\"}"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "ok",
+                        "value": 1.0,
+                        "inputFormat": "1",
+                        "displayText": "SUCCESS"
+                    }
+                ],
+                "base": {
+                    "severity": "high",
+                    "displayText": "FAIL"
+                }
+            }
+        },
+        {
+            "id": 12,
+            "type": "advancedNumber",
+            "name": "Last Build for FailingPipeline",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "Jenkins Job",
+                        "timeSeriesDisplayNameTemplate": "{{jenkins_job}}",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "default_jenkins_builds_last_build_result{jenkins_job=\"FailingPipeline\"}"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "ok",
+                        "value": 1.0,
+                        "inputFormat": "1",
+                        "displayText": "SUCCESS"
+                    }
+                ],
+                "base": {
+                    "severity": "high",
+                    "displayText": "FAIL"
+                }
+            }
+        },
+        {
+            "id": 14,
+            "type": "advancedNumber",
+            "name": "Last Hour Success Builds for FailingPipeline",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "ceil(increase(default_jenkins_builds_success_build_count{jenkins_job=\"FailingPipeline\"}[1h]))"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "ok",
+                        "value": 10.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    },
+                    {
+                        "severity": "medium",
+                        "value": 5.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "high",
+                    "displayText": ""
+                }
+            }
+        },
+        {
+            "id": 15,
+            "type": "advancedNumber",
+            "name": "Last Hour Failed Builds for NormalPipeline",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "ceil(increase(default_jenkins_builds_failed_build_count{jenkins_job=\"NormalPipeline\"}[1h]))"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "high",
+                        "value": 10.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    },
+                    {
+                        "severity": "medium",
+                        "value": 5.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "ok",
+                    "displayText": ""
+                }
+            }
+        },
+        {
+            "id": 16,
+            "type": "advancedNumber",
+            "name": "Last Hour Failed Builds for FailingPipeline",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "ceil(increase(default_jenkins_builds_failed_build_count{jenkins_job=\"FailingPipeline\"}[1h]))"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "high",
+                        "value": 10.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    },
+                    {
+                        "severity": "medium",
+                        "value": 5.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "ok",
+                    "displayText": ""
+                }
+            }
+        }
+    ],
+    "eventDisplaySettings": {
+        "enabled": false,
+        "queryParams": {
+            "severities": [],
+            "alertStatuses": [],
+            "categories": [],
+            "filter": "",
+            "teamScope": false
+        }
+    },
+    "shared": false,
+    "public": false,
+    "version": 84,
+    "createdOn": 1591720337000,
+    "modifiedOn": 1595334593000,
+    "description": "",
+    "layout": [
+        {
+            "panelId": 1,
+            "x": 0,
+            "y": 1,
+            "w": 6,
+            "h": 3
+        },
+        {
+            "panelId": 2,
+            "x": 12,
+            "y": 1,
+            "w": 6,
+            "h": 3
+        },
+        {
+            "panelId": 3,
+            "x": 6,
+            "y": 1,
+            "w": 6,
+            "h": 3
+        },
+        {
+            "panelId": 4,
+            "x": 0,
+            "y": 13,
+            "w": 9,
+            "h": 4
+        },
+        {
+            "panelId": 5,
+            "x": 0,
+            "y": 0,
+            "w": 18,
+            "h": 1
+        },
+        {
+            "panelId": 6,
+            "x": 0,
+            "y": 4,
+            "w": 18,
+            "h": 1
+        },
+        {
+            "panelId": 7,
+            "x": 9,
+            "y": 13,
+            "w": 9,
+            "h": 4
+        },
+        {
+            "panelId": 8,
+            "x": 0,
+            "y": 17,
+            "w": 18,
+            "h": 5
+        },
+        {
+            "panelId": 9,
+            "x": 0,
+            "y": 7,
+            "w": 9,
+            "h": 3
+        },
+        {
+            "panelId": 11,
+            "x": 0,
+            "y": 5,
+            "w": 9,
+            "h": 2
+        },
+        {
+            "panelId": 12,
+            "x": 9,
+            "y": 5,
+            "w": 9,
+            "h": 2
+        },
+        {
+            "panelId": 14,
+            "x": 9,
+            "y": 7,
+            "w": 9,
+            "h": 3
+        },
+        {
+            "panelId": 15,
+            "x": 0,
+            "y": 10,
+            "w": 9,
+            "h": 3
+        },
+        {
+            "panelId": 16,
+            "x": 9,
+            "y": 10,
+            "w": 9,
+            "h": 3
+        }
+    ],
+    "sharingSettings": [],
+    "favorite": false,
+    "schema": 3,
+    "permissions": [
+        "dashboards.sharing",
+        "dashboards.edit",
+        "dashboards.delete",
+        "dashboards.read"
+    ]
+}
+

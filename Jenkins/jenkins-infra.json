@@ -1,0 +1,1072 @@
+{
+    "name": "Jenkins Infrastructure",
+    "panels": [
+        {
+            "id": 1,
+            "type": "basicNumber",
+            "name": "Active Plugins",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "jenkins_plugins_active",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "jenkins_plugins_active",
+                                "id": "jenkins_plugins_active",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "jenkins_plugins_active",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "heuristic": false,
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                },
+                                "documentTimestamp": 1595348729358,
+                                "documentType": "metric"
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 2,
+            "type": "basicNumber",
+            "name": "Plugins with Updates Pending",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "jenkins_plugins_withUpdate",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "jenkins_plugins_withUpdate",
+                                "id": "jenkins_plugins_withUpdate",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "jenkins_plugins_withUpdate",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "heuristic": false,
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                },
+                                "documentTimestamp": 1595348729358,
+                                "documentType": "metric"
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "high",
+                        "value": 15.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    },
+                    {
+                        "severity": "low",
+                        "value": 10.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "ok",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 3,
+            "type": "basicNumber",
+            "name": "Plugins in Error",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "jenkins_plugins_failed",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "jenkins_plugins_failed",
+                                "id": "jenkins_plugins_failed",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "jenkins_plugins_failed",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "heuristic": false,
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                },
+                                "documentTimestamp": 1595348729358,
+                                "documentType": "metric"
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "high",
+                        "value": 5.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    },
+                    {
+                        "severity": "low",
+                        "value": 2.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "ok",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 4,
+            "type": "basicNumber",
+            "name": "Jenkins Status",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "default_jenkins_up",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "default_jenkins_up",
+                                "id": "default_jenkins_up",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "default_jenkins_up",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "heuristic": false,
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                },
+                                "documentTimestamp": 1595348729358,
+                                "documentType": "metric"
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "ok",
+                        "value": 1.0,
+                        "inputFormat": "1",
+                        "displayText": "UP"
+                    }
+                ],
+                "base": {
+                    "severity": "high",
+                    "displayText": "DOWN"
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 5,
+            "type": "advancedNumber",
+            "name": "Jenkins UpTime",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "relativeTime",
+                        "inputFormat": "ms",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "default_jenkins_uptime"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "ok",
+                        "value": 1.0,
+                        "inputFormat": "d",
+                        "displayText": ""
+                    },
+                    {
+                        "severity": "low",
+                        "value": 10.0,
+                        "inputFormat": "m",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "high",
+                    "displayText": ""
+                }
+            }
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "name": "Jenkins Status (2)",
+            "description": "",
+            "markdownSource": "Jenkins Status",
+            "transparentBackground": false,
+            "panelTitleVisible": false,
+            "textAutosized": true
+        },
+        {
+            "id": 7,
+            "type": "advancedNumber",
+            "name": "Health Score",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "%",
+                        "inputFormat": "0-100",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "avg(avg_over_time(jenkins_health_check_score[$__interval]))*100"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "ok",
+                        "value": 90.0,
+                        "inputFormat": "0-100",
+                        "displayText": ""
+                    },
+                    {
+                        "severity": "medium",
+                        "value": 20.0,
+                        "inputFormat": "0-100",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "high",
+                    "displayText": ""
+                }
+            }
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "name": "Plugins Summary",
+            "description": "",
+            "markdownSource": "Plugins Summary",
+            "transparentBackground": false,
+            "panelTitleVisible": false,
+            "textAutosized": true
+        },
+        {
+            "id": 9,
+            "type": "advancedNumber",
+            "name": "Total # of Executors",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "avg(avg_over_time(jenkins_executor_count_value[$__interval]))"
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                }
+            }
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "name": "Executors Summary",
+            "description": "",
+            "markdownSource": "Executors Summary",
+            "transparentBackground": false,
+            "panelTitleVisible": false,
+            "textAutosized": true
+        },
+        {
+            "id": 11,
+            "type": "basicTimechart",
+            "name": "Executors in Use over Time",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "jenkins_executor_in_use_history",
+                            "timeAggregation": "max",
+                            "groupAggregation": "max",
+                            "descriptor": {
+                                "documentId": "jenkins_executor_in_use_history",
+                                "id": "jenkins_executor_in_use_history",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "jenkins_executor_in_use_history",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "heuristic": false,
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                },
+                                "documentTimestamp": 1595348729359,
+                                "documentType": "metric"
+                            },
+                            "sorting": null
+                        }
+                    ],
+                    "segmentation": {
+                        "labels": [],
+                        "limit": 10,
+                        "direction": "desc"
+                    }
+                }
+            ],
+            "applyScopeToAll": false,
+            "applySegmentationToAll": false,
+            "legendConfiguration": {
+                "enabled": false,
+                "position": "right",
+                "layout": "table",
+                "showCurrent": true
+            },
+            "axesConfiguration": {
+                "bottom": {
+                    "enabled": true
+                },
+                "left": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": 0.0,
+                    "maxValue": null,
+                    "minInputFormat": "1",
+                    "maxInputFormat": "1",
+                    "scale": "linear"
+                },
+                "right": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": 0.0,
+                    "maxValue": null,
+                    "minInputFormat": "1",
+                    "maxInputFormat": "1",
+                    "scale": "linear"
+                }
+            }
+        },
+        {
+            "id": 12,
+            "type": "advancedNumber",
+            "name": "# of Executors Free",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "jenkins_executor_free_value"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "ok",
+                        "value": 1.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "high",
+                    "displayText": ""
+                }
+            }
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "name": "Nodes Summary",
+            "description": "",
+            "markdownSource": "Nodes Summary",
+            "transparentBackground": false,
+            "panelTitleVisible": false,
+            "textAutosized": true
+        },
+        {
+            "id": 14,
+            "type": "advancedNumber",
+            "name": "# of Nodes",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "jenkins_node_count_value"
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                }
+            }
+        },
+        {
+            "id": 15,
+            "type": "advancedNumber",
+            "name": "Online Nodes",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "jenkins_node_online_value"
+                }
+            ],
+            "numberThresholds": {
+                "values": [
+                    {
+                        "severity": "ok",
+                        "value": 1.0,
+                        "inputFormat": "1",
+                        "displayText": ""
+                    }
+                ],
+                "base": {
+                    "severity": "high",
+                    "displayText": ""
+                }
+            }
+        },
+        {
+            "id": 16,
+            "type": "advancedTimechart",
+            "name": "Node Availability over Time",
+            "description": "",
+            "advancedQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "query": "jenkins_node_online_history"
+                }
+            ],
+            "legendConfiguration": {
+                "enabled": false,
+                "position": "right",
+                "layout": "table",
+                "showCurrent": true
+            },
+            "axesConfiguration": {
+                "bottom": {
+                    "enabled": true
+                },
+                "left": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": 0.0,
+                    "maxValue": null,
+                    "minInputFormat": "1",
+                    "maxInputFormat": "1",
+                    "scale": "linear"
+                },
+                "right": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": 0.0,
+                    "maxValue": null,
+                    "minInputFormat": "1",
+                    "maxInputFormat": "1",
+                    "scale": "linear"
+                }
+            }
+        }
+    ],
+    "eventDisplaySettings": {
+        "enabled": false,
+        "queryParams": {
+            "severities": [],
+            "alertStatuses": [],
+            "categories": [],
+            "filter": "",
+            "teamScope": false
+        }
+    },
+    "shared": false,
+    "public": false,
+    "version": 83,
+    "createdOn": 1588089187000,
+    "modifiedOn": 1595263419000,
+    "description": "",
+    "layout": [
+        {
+            "panelId": 1,
+            "x": 12,
+            "y": 1,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 2,
+            "x": 20,
+            "y": 1,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 3,
+            "x": 16,
+            "y": 1,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 4,
+            "x": 0,
+            "y": 1,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 5,
+            "x": 4,
+            "y": 1,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 6,
+            "x": 0,
+            "y": 0,
+            "w": 12,
+            "h": 1
+        },
+        {
+            "panelId": 7,
+            "x": 8,
+            "y": 1,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 8,
+            "x": 12,
+            "y": 0,
+            "w": 12,
+            "h": 1
+        },
+        {
+            "panelId": 9,
+            "x": 12,
+            "y": 5,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 10,
+            "x": 12,
+            "y": 4,
+            "w": 12,
+            "h": 1
+        },
+        {
+            "panelId": 11,
+            "x": 16,
+            "y": 5,
+            "w": 8,
+            "h": 6
+        },
+        {
+            "panelId": 12,
+            "x": 12,
+            "y": 8,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 13,
+            "x": 0,
+            "y": 4,
+            "w": 12,
+            "h": 1
+        },
+        {
+            "panelId": 14,
+            "x": 0,
+            "y": 5,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 15,
+            "x": 0,
+            "y": 8,
+            "w": 4,
+            "h": 3
+        },
+        {
+            "panelId": 16,
+            "x": 4,
+            "y": 5,
+            "w": 8,
+            "h": 6
+        }
+    ],
+    "sharingSettings": [],
+    "favorite": false,
+    "schema": 3,
+    "permissions": [
+        "dashboards.sharing",
+        "dashboards.delete",
+        "dashboards.read",
+        "dashboards.edit"
+    ]
+}
+

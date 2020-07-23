@@ -2,8 +2,9 @@
 
 ## What this is about
 
-Jenkins Prometheus Metrics
+This article explores the Jenkins Prometheus metrics, and shows how to collect them with Sysdig Monitor, and create awesome Jenkins dashboards written in PromQL
 
+If you need to create a demo or test environment, the article starts with a step by step guide to create a demo environment, by installing and configuring Jenkins and the Sysdig agents on an existing Kubernetes cluster.
 
 <br>
 
@@ -48,7 +49,8 @@ Note that version 2.0.6 may not be the latest version of the Prometheus plugin t
 
 ### 4) Search for `persistence` and modify the `enabled` parameter one line below to `false`
 
-If you prefer to get an already modified `values.yaml` file, you can download it from here: <<<>>>
+If you prefer to get an already modified `values.yaml` file, you can download it from here: https://raw.githubusercontent.com/swoillez/SysdigAddOns/master/Jenkins/jenkins-values.yaml
+
 
 <br>
 
@@ -128,20 +130,16 @@ Search for `accessKey` and paste your Sysdig access Key
 
 ### 2) Cluster Name
 
+Search for `k8s_cluster_name` and paste the name of your cluster.
 
+```yaml
+  settings:
+    k8s_cluster_name: "<Name of the Cluster>"
+```
 
-Jenkins Shedule: H/5 * * * *
+### 3) Activate Prometheus support
 
-
-
-
-helm install sysdig-agent -f sysdig-values.yaml stable/sysdig -n sysdig-agent
-promraw.default_jenkins
-
-
-kubectl edit configmap sysdig-agent -n sysdig-agent
-
-- Config Prometheus:
+Just after the `k8s_cluster_name` line, paste in the following section:
 
 ```yaml
     prometheus:
@@ -152,88 +150,135 @@ kubectl edit configmap sysdig-agent -n sysdig-agent
     10s_flush_enable: true
 ```
 
+If you prefer to get an already modified `values.yaml` file to install the Sysdig agents, you can download it from here: https://raw.githubusercontent.com/swoillez/SysdigAddOns/master/Jenkins/sysdig-values.yaml
 
----
+<br>
 
-## Links
+## Install the Sysdig agents
 
-https://plugins.jenkins.io/prometheus/
+Create a new namespace named "sysdig-agent" and then deploy in that namespace the Sysdig chart using the customized configuration file:
+
+```
+kubectl create ns jenkins
+helm install sysdig -f sysdig-values.yaml stable/sysdig -n sysdig-agent
+```
+
+After a couple of minutes, you should see the agents showing up in your Sysdig console:
+
+![Sysdig Agents Up](images/sysdig-agent-online.png)
+
+<br>
+
+# 3) Create fake Jenkins failing pipelines for testing purpose
+
+In order to generate interesting data to monitor, you need to execute Jenkins pipelines. If you don't have some already, here is a simple way to create a pipeline with lots of problems.
+
+We will create a fake pipeline, that executes a script that will randomly cause fails and long running jobs.
+
+In Jenkins, click on `New Item`, Give a name to your new pipeline, and select `Freestyle project`. Click OK.
+
+In the Pipeline configuration window, find the `Build Triggers` section, check `Build Periodically` and, in the schedule window below, enter "`H/5 * * * *`". This will launch the Pipeline every 5 minutes.
+
+Now find the `Build`section, click on `Add build step` and select `Execute Shell`. In the `Command`that appears below, copy and paste the following script. This will generate random fake errors and delays. You can modify the number `6` in the script. The lower the number is, the most probable an error will occur.
+
+```bash
+#!/bin/bash
+
+echo "Jenkins Fake Bad Build task"
+
+RANDOM_FAIL=$(($RANDOM%10))
+RANDOM_LONG=$(($RANDOM%10))
+
+echo "Random Fail number is: $RANDOM_FAIL"
+
+if (( $RANDOM_FAIL > 6  )); then
+  echo 'Fake Fail !!'
+  exit 1
+fi
+
+echo "Random Long task number is: $RANDOM_LONG"
+
+if (( $RANDOM_LONG > 6 )); then
+  echo 'We will sleep for a bit long'
+  sleep $(( ${RANDOM_LONG} + 15 ))
+else
+  echo 'This time the task is short'
+  sleep ${RANDOM_LONG}
+fi
+
+exit 0
+```
+
+Save the pipeline. The first try will start quickly.
+
+<br>
+
+# 4) Create great Sysdig dashboards for Jenkins
+
+Now that everything is set you should see Jenkins metrics in Sysdig and be able to create great looking dashboards for Jenkins.
+
+![Sysdig Agents Up](images/jenkins-metrics.png)
+
+Using these raw metrics, you can now create great Jenkins dashboards, using either PromQL panels or the Form based panels. The two can be mixed in the same dashboard, for your convenience.
+
+### PromQL Panel:
+
+![Sysdig Agents Up](images/promql-panel.png)
+
+### Form Based Panel:
+
+![Sysdig Agents Up](images/form-panel.png)
 
 
-https://sysdig.atlassian.net/wiki/spaces/~877077671/pages/865731144/Monitor+Jenkins+with+Prometheus
+## Sysdig Dashboards for Jenkins
 
+You can explore the Prometheus metrics for Jenkins to find what is important for you and your users, and create the associated Sysdig dashboards.
 
+As examples, I have create two Jenkins dashboards. The first one show the Jenkins infrastructure metrics, showing if the Jenkins environment works fine, and has enough resources to handle the load. The second dashboard is an example of a user oriented dashboard, that show detailed information of pipelines, in order to understand if everything runs well in the Jenkins environment.
 
-Metrics
+### Jenkins Infrastructure Dashboard:
 
-### Jenkins Infrastructure
+![Sysdig Agents Up](images/infra-dashboard.png)
 
-default_jenkins_up (Not Available)
-promraw.default_jenkins_uptime (Not Available)
-jenkins_plugins_failed
-jenkins_plugins_withUpdate
-jenkins_plugins_active
+### Jenkins Pipelines Dashboard:
 
-jenkins_health_check_score
-promraw.jenkins_health_check_count
+![Sysdig Agents Up](images/jobs-dashboard.png)
 
-jenkins_executor_in_use_value
-jenkins_executor_in_use_history
-jenkins_executor_count_value
-jenkins_executor_count_history
-jenkins_executor_free_value
+<br>
 
-jenkins_node_offline_history
-jenkins_node_online_history
-jenkins_node_offline
-jenkins_node_count_value
-jenkins_node_count_history
+Of course, alerts can be created on all panels. For instance, you can be alerted if:
 
-jenkins_runs_total_total
-jenkins_runs_success
+- Jenkins is down for more than 15 minutes
+- More than 20% of Jenkins plugins need updates or are in error
+- There are not enough resources to execute the pipelines
+- Your pipeline is constantly failing for a couple of hours
+- Your pipeline is now taking much more time than before to execute
 
-### Jenkins ???
+<br>
 
-jenkins_job_count_value
-jenkins_job_waiting_duration
-jenkins_job_total_duration
-jenkins_job_building_duration
-jenkins_job_blocked_duration
-jenkins_job_queuing_duration
-jenkins_job_averageDepth
-jenkins_job_scheduled_total
-jenkins_job_execution_time
+## Import/Export Sysdig Dashboards
 
+The easiest way to share dashboards in to import/export them using the `sdc-cli` command line. You can find the documentation for `sdc-cli` here: https://docs.sysdig.com/en/sysdig-cli-for-sysdig-monitor-and-secure.html
 
-jenkins_queue_blocked_value
-jenkins_queue_size_history
-jenkins_queue_pending_history
-jenkins_queue_stuck_history
-jenkins_queue_size_value
+- To get the list of your dashboards:
 
-jenkins_task_scheduled
-jenkins_task_waiting_duration
-jenkins_task_blocked_duration
+```
+sdc-cli dashboard list
+```
 
+- To export a dashboard:
 
-## Jenkins Build Service
+```
+sdc-cli --json dashboard get <dashboard ID> > <file.json>
+```
 
-jenkins_project_count_value
-jenkins_project_count_history
-jenkins_project_enabled_count
-jenkins_project_disabled_coun
+- To import a dashboard:
 
+```
+sdc-cli dashboard add-json <file.json>
+```
 
-default_jenkins_builds_duration_milliseconds_summary_count{jenkins_job="FailingPipeline",repo="NA",} 3975.0
-default_jenkins_builds_success_build_count
-default_jenkins_builds_failed_build_count
-default_jenkins_builds_last_build_result
-default_jenkins_builds_last_build_duration_milliseconds
+The two dashboards I have created above can be downloaded and then imported from here:
 
-Jauges
-
-default_jenkins_builds_last_build_result
-default_jenkins_builds_last_build_duration_milliseconds
-jenkins_job_count_value
-jenkins_plugins_failed
-jenkins_queue_blocked_value
+- Infra Dashboard: https://raw.githubusercontent.com/swoillez/SysdigAddOns/master/Jenkins/jenkins-infra.json
+- Jobs Dashboard: https://raw.githubusercontent.com/swoillez/SysdigAddOns/master/Jenkins/jenkins-jobs.json
