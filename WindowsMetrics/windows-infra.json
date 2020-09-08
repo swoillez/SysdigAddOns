@@ -1,0 +1,1054 @@
+{
+    "name": "Windows Low Level",
+    "panels": [
+        {
+            "id": 1,
+            "type": "basicTable",
+            "name": "CPU Frequency",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "windows_cpu_core_frequency_mhz",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "windows_cpu_core_frequency_mhz",
+                                "id": "windows_cpu_core_frequency_mhz",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "windows_cpu_core_frequency_mhz",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1599557766103,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ],
+                    "segmentation": {
+                        "labels": [
+                            {
+                                "id": "core",
+                                "descriptor": null,
+                                "displayName": null,
+                                "sorting": null
+                            }
+                        ],
+                        "limit": 10,
+                        "direction": "desc"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "basicTimechart",
+            "name": "CPU Usage Type",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "%",
+                        "inputFormat": "0-1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "windows_cpu_time_total",
+                            "timeAggregation": "timeAvg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "windows_cpu_time_total",
+                                "id": "windows_cpu_time_total",
+                                "metricType": "counter",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "windows_cpu_time_total",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "timeAvg",
+                                    "sum"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1599557766103,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ],
+                    "segmentation": {
+                        "labels": [
+                            {
+                                "id": "mode",
+                                "descriptor": null,
+                                "displayName": null,
+                                "sorting": null
+                            }
+                        ],
+                        "limit": 10,
+                        "direction": "desc"
+                    }
+                }
+            ],
+            "applyScopeToAll": false,
+            "applySegmentationToAll": false,
+            "legendConfiguration": {
+                "enabled": true,
+                "position": "right",
+                "layout": "table",
+                "showCurrent": true,
+                "width": null,
+                "height": null
+            },
+            "axesConfiguration": {
+                "bottom": {
+                    "enabled": true
+                },
+                "left": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": 0.0,
+                    "maxValue": null,
+                    "minInputFormat": "0-100",
+                    "maxInputFormat": "0-100",
+                    "scale": "linear"
+                },
+                "right": {
+                    "enabled": true,
+                    "displayName": null,
+                    "unit": "auto",
+                    "displayFormat": "auto",
+                    "decimals": null,
+                    "minValue": 0.0,
+                    "maxValue": null,
+                    "minInputFormat": "1",
+                    "maxInputFormat": "1",
+                    "scale": "linear"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "type": "basicNumber",
+            "name": "Number of Processors",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "windows_cs_logical_processors",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "windows_cs_logical_processors",
+                                "id": "windows_cs_logical_processors",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "windows_cs_logical_processors",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1599557766103,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 4,
+            "type": "basicNumber",
+            "name": "Physical Memory Installed",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "byte",
+                        "inputFormat": "B",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "windows_cs_physical_memory_bytes",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "windows_cs_physical_memory_bytes",
+                                "id": "windows_cs_physical_memory_bytes",
+                                "metricType": "gauge",
+                                "type": "byte",
+                                "scale": 1.0,
+                                "name": "windows_cs_physical_memory_bytes",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1599557766103,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 5,
+            "type": "basicNumber",
+            "name": "Free Physical Memory",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "byte",
+                        "inputFormat": "B",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "windows_os_physical_memory_free_bytes",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "windows_os_physical_memory_free_bytes",
+                                "id": "windows_os_physical_memory_free_bytes",
+                                "metricType": "gauge",
+                                "type": "byte",
+                                "scale": 1.0,
+                                "name": "windows_os_physical_memory_free_bytes",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1599557766103,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "name": "Memory",
+            "description": "",
+            "markdownSource": "Memory",
+            "transparentBackground": false,
+            "panelTitleVisible": false,
+            "textAutosized": true
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "name": "CPU",
+            "description": "",
+            "markdownSource": "CPU",
+            "transparentBackground": false,
+            "panelTitleVisible": false,
+            "textAutosized": true
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "name": "Processes",
+            "description": "",
+            "markdownSource": "Processes",
+            "transparentBackground": false,
+            "panelTitleVisible": false,
+            "textAutosized": true
+        },
+        {
+            "id": 9,
+            "type": "basicNumber",
+            "name": "# of Running Processes",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "number",
+                        "inputFormat": "1",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "windows_os_processes",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "windows_os_processes",
+                                "id": "windows_os_processes",
+                                "metricType": "gauge",
+                                "type": "number",
+                                "scale": 1.0,
+                                "name": "windows_os_processes",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1599557766103,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 10,
+            "type": "basicNumber",
+            "name": "Total Virtual Memory",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "byte",
+                        "inputFormat": "B",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "windows_os_virtual_memory_bytes",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "windows_os_virtual_memory_bytes",
+                                "id": "windows_os_virtual_memory_bytes",
+                                "metricType": "gauge",
+                                "type": "byte",
+                                "scale": 1.0,
+                                "name": "windows_os_virtual_memory_bytes",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1599557766103,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        },
+        {
+            "id": 11,
+            "type": "basicNumber",
+            "name": "Virtual Memory Available",
+            "description": "",
+            "basicQueries": [
+                {
+                    "enabled": true,
+                    "displayInfo": {
+                        "displayName": "",
+                        "timeSeriesDisplayNameTemplate": "",
+                        "type": "lines"
+                    },
+                    "format": {
+                        "unit": "byte",
+                        "inputFormat": "B",
+                        "displayFormat": "auto",
+                        "decimals": null,
+                        "yAxis": "auto"
+                    },
+                    "scope": {
+                        "expressions": [],
+                        "extendsDashboardScope": true
+                    },
+                    "compareTo": {
+                        "enabled": false,
+                        "delta": 1,
+                        "timeFormat": "day"
+                    },
+                    "metrics": [
+                        {
+                            "id": "windows_os_virtual_memory_free_bytes",
+                            "timeAggregation": "avg",
+                            "groupAggregation": "avg",
+                            "descriptor": {
+                                "documentId": "windows_os_virtual_memory_free_bytes",
+                                "id": "windows_os_virtual_memory_free_bytes",
+                                "metricType": "gauge",
+                                "type": "byte",
+                                "scale": 1.0,
+                                "name": "windows_os_virtual_memory_free_bytes",
+                                "category": "prometheus",
+                                "namespaces": [
+                                    "host",
+                                    "host.process",
+                                    "host.container",
+                                    "cloudProvider",
+                                    "mesos",
+                                    "ecs",
+                                    "kubernetes.cluster",
+                                    "kubernetes.namespace",
+                                    "kubernetes.deployment",
+                                    "kubernetes.job",
+                                    "kubernetes.daemonSet",
+                                    "kubernetes.service",
+                                    "kubernetes.node",
+                                    "kubernetes.replicaSet",
+                                    "kubernetes.statefulSet",
+                                    "kubernetes.resourcequota",
+                                    "kubernetes.persistentvolume",
+                                    "kubernetes.persistentvolumeclaim",
+                                    "kubernetes.pod"
+                                ],
+                                "scopes": [],
+                                "timeAggregations": [
+                                    "avg",
+                                    "min",
+                                    "max"
+                                ],
+                                "groupAggregations": [
+                                    "avg",
+                                    "sum",
+                                    "min",
+                                    "max"
+                                ],
+                                "aggregationForGroup": "avg",
+                                "hidden": false,
+                                "experimental": false,
+                                "deferred": false,
+                                "identity": false,
+                                "canMonitor": false,
+                                "canGroupBy": false,
+                                "canFilter": false,
+                                "generatedFrom": "com.draios.model.metrics.custom.PrometheusRawMetric",
+                                "segment": false,
+                                "documentTimestamp": 1599557766103,
+                                "heuristic": false,
+                                "documentType": "metric",
+                                "routingInfo": {
+                                    "customerId": null,
+                                    "routing": null
+                                }
+                            },
+                            "sorting": null
+                        }
+                    ]
+                }
+            ],
+            "numberThresholds": {
+                "values": [],
+                "base": {
+                    "severity": "none",
+                    "displayText": ""
+                },
+                "useDefaults": null
+            }
+        }
+    ],
+    "scopeExpressionList": [
+        {
+            "operand": "windows_host",
+            "operator": "in",
+            "displayName": "",
+            "value": [
+                "10.10.0.175"
+            ],
+            "descriptor": null,
+            "variable": false,
+            "isVariable": false
+        }
+    ],
+    "eventDisplaySettings": {
+        "enabled": true,
+        "queryParams": {
+            "severities": [],
+            "alertStatuses": [],
+            "categories": [],
+            "filter": "",
+            "teamScope": false
+        }
+    },
+    "shared": false,
+    "public": false,
+    "version": 42,
+    "createdOn": 1597151000000,
+    "modifiedOn": 1597760593000,
+    "description": "",
+    "layout": [
+        {
+            "panelId": 1,
+            "x": 4,
+            "y": 1,
+            "w": 8,
+            "h": 4
+        },
+        {
+            "panelId": 2,
+            "x": 13,
+            "y": 1,
+            "w": 9,
+            "h": 5
+        },
+        {
+            "panelId": 3,
+            "x": 0,
+            "y": 1,
+            "w": 4,
+            "h": 4
+        },
+        {
+            "panelId": 4,
+            "x": 0,
+            "y": 7,
+            "w": 5,
+            "h": 4
+        },
+        {
+            "panelId": 5,
+            "x": 5,
+            "y": 7,
+            "w": 5,
+            "h": 4
+        },
+        {
+            "panelId": 6,
+            "x": 0,
+            "y": 6,
+            "w": 22,
+            "h": 1
+        },
+        {
+            "panelId": 7,
+            "x": 0,
+            "y": 0,
+            "w": 22,
+            "h": 1
+        },
+        {
+            "panelId": 8,
+            "x": 0,
+            "y": 15,
+            "w": 22,
+            "h": 1
+        },
+        {
+            "panelId": 9,
+            "x": 0,
+            "y": 16,
+            "w": 5,
+            "h": 3
+        },
+        {
+            "panelId": 10,
+            "x": 0,
+            "y": 11,
+            "w": 5,
+            "h": 4
+        },
+        {
+            "panelId": 11,
+            "x": 5,
+            "y": 11,
+            "w": 5,
+            "h": 4
+        }
+    ],
+    "sharingSettings": [],
+    "favorite": false,
+    "schema": 3,
+    "permissions": [
+        "dashboards.edit",
+        "dashboards.delete",
+        "dashboards.sharing",
+        "dashboards.read"
+    ]
+}

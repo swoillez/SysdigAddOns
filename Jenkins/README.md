@@ -161,7 +161,7 @@ If you prefer to get an already modified `values.yaml` file to install the Sysdi
 Create a new namespace named "sysdig-agent" and then deploy in that namespace the Sysdig chart using the customized configuration file:
 
 ```
-kubectl create ns jenkins
+kubectl create ns sysdig-agent
 helm install sysdig -f sysdig-values.yaml stable/sysdig -n sysdig-agent
 ```
 
@@ -280,7 +280,9 @@ sdc-cli --json dashboard get <dashboard ID> > <file.json>
 sdc-cli dashboard add-json <file.json>
 ```
 
-The two dashboards I have created above can be downloaded and then imported from here:
+<br>
+
+The two dashboards I have created above can be downloaded from the following links, and then imported in Sysdig Monitor using the above command:
 
 - Infra Dashboard: https://raw.githubusercontent.com/swoillez/SysdigAddOns/master/Jenkins/jenkins-infra.json
 - Jobs Dashboard: https://raw.githubusercontent.com/swoillez/SysdigAddOns/master/Jenkins/jenkins-jobs.json
