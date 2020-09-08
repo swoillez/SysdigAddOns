@@ -61,3 +61,9 @@ An example to demonstrate how to use the Sysdig REST API to create a team that i
 ## [The ultimate list of what Sysdig monitors](https://github.com/swoillez/SysdigAddOns/tree/master/WhatDoesSysdigMonitor)
 
 The complete and ultimate summary of the metrics that Sysdig can collect to monitor things, with links to all details you need
+
+---
+
+## [Windows Server monitoring using the Prometheus exporter](https://github.com/swoillez/SysdigAddOns/tree/master/WindowsMetrics)
+
+How to monitor Windows servers using Sysdig and the Prometheus exporter for Windows Server
