@@ -52,6 +52,12 @@ How to deploy the Sysdig agents on Oracle Kubernetes Engine
 
 ---
 
+## [Monitor Packet Loss in network connections](https://github.com/swoillez/SysdigAddOns/tree/master/PromRespTimePAcketLoss)
+
+How to monitor packet loss in network connections using an exporter that measures the network response time of servers with ICMP requests.
+
+---
+
 ## [A script to create scoped Sysdig Teams](https://github.com/swoillez/SysdigAddOns/tree/master/teamsAutomation)
 
 An example to demonstrate how to use the Sysdig REST API to create a team that is automatically scoped to a namespace
