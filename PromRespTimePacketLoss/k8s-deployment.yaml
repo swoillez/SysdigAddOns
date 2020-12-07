@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smokeping
+  labels:
+    app: smokeping
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smokeping
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9374"
+        prometheus.io/path: "/metrics"
+      labels:
+        app: smokeping
+    spec:
+      containers:
+      - name: smokeping
+        image: stephw/smokeping_prober
+        env:
+        - name: HOSTS
+          value: "google.com apple.com"
+
