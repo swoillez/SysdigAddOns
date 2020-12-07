@@ -52,7 +52,7 @@ How to deploy the Sysdig agents on Oracle Kubernetes Engine
 
 ---
 
-## [Monitor Packet Loss in network connections](https://github.com/swoillez/SysdigAddOns/tree/master/PromRespTimePAcketLoss)
+## [Monitor Packet Loss in network connections](https://github.com/swoillez/SysdigAddOns/tree/master/PromRespTimePacketLoss)
 
 How to monitor packet loss in network connections using an exporter that measures the network response time of servers with ICMP requests.
 
