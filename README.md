@@ -58,6 +58,12 @@ How to monitor packet loss in network connections using an exporter that measure
 
 ---
 
+## [Sysdig Secure Agent Components and consumptio,n](https://github.com/swoillez/SysdigAddOns/tree/master/SysdigSecureAgentConsumption)
+
+A description of the components deployed by Sysdig Secure on your clusters, with consumptions.
+
+---
+
 ## [A script to create scoped Sysdig Teams](https://github.com/swoillez/SysdigAddOns/tree/master/teamsAutomation)
 
 An example to demonstrate how to use the Sysdig REST API to create a team that is automatically scoped to a namespace
