@@ -58,7 +58,7 @@ How to monitor packet loss in network connections using an exporter that measure
 
 ---
 
-## [Sysdig Secure Agent Components and consumptio,n](https://github.com/swoillez/SysdigAddOns/tree/master/SysdigSecureAgentConsumption)
+## [Sysdig Secure Agent Components and consumption](https://github.com/swoillez/SysdigAddOns/tree/master/SysdigSecureAgentConsumption)
 
 A description of the components deployed by Sysdig Secure on your clusters, with consumptions.
 
