@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+
+  falco:
+    privileged: true
+    image: falcosecurity/falco
+    networks:
+      - falco-net
+    volumes:
+      - "/var/run/docker.sock:/host/var/run/docker.sock"
+      - "/dev:/host/dev"
+      - "/proc:/host/proc:ro"
+      - "/boot:/host/boot:ro"
+      - "/lib/modules:/host/lib/modules:ro"
+      - "/usr:/host/usr:ro"
+      - "<LOCATION OF FALCO FILES>:/etc/falco:ro"
+
+  falcosidekick:
+    image: falcosecurity/falcosidekick
+    networks:
+      - falco-net
+    ports:
+      - "2801:2801"
+    environment:
+      - "WEBUI_URL=http://falcosidekickui:2802"
+
+  falcosidekickui:
+    image: falcosecurity/falcosidekick-ui
+    networks:
+      - falco-net
+    ports:
+      - "2802:2802"
+
+networks:
+  falco-net:
+
+

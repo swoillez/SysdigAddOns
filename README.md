@@ -58,6 +58,12 @@ How to monitor packet loss in network connections using an exporter that measure
 
 ---
 
+## [Basic Sandbox for Sysdig Secure](https://github.com/swoillez/SysdigAddOns/tree/master/SecureSandbox)
+
+Two simple scripts to install Docker and then Kubernetes on a single host runing Ubuntu or Debian like linux, to quickly create a Sysdig Secure Sandbox
+
+---
+
 ## [Sysdig Secure Agent Components and consumption](https://github.com/swoillez/SysdigAddOns/tree/master/SysdigSecureAgentConsumption)
 
 A description of the components deployed by Sysdig Secure on your clusters, with consumptions.
